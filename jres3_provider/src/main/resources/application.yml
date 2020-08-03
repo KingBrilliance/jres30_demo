@@ -1,0 +1,27 @@
+app:
+  name: provider
+  registry:
+    address: 127.0.0.1:2181
+
+  server:
+    port: 8889
+
+rpc:
+  registry:
+    group: dubbo
+  protocl:
+    name: dubbo
+    port: 28882
+
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql:///hundsun?useUnicode=true&characterEncoding=utf8
+#    username: root
+#    password: 123123
+logging:
+  level:
+    root: info
+  path: /Users/wangcan/log
+  file: log_provider.log

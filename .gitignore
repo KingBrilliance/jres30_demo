@@ -1,0 +1,5 @@
+# Project exclude paths
+/common-api/target/
+/jres3_consumer/target/
+/jres3_provider/target/
+/jres3_provider_01/target/

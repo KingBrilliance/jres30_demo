@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <appenders>
+        <Kafka name="TraceLog" topic="acm">
+            <PatternLayout pattern="%msg%n"/>
+            <Property name="bootstrap.servers">127.0.0.1:9092</Property>
+            <Property name="batch.size">16384</Property>
+        </Kafka>
+        <Async name="AsyncTraceLog">
+            <AppenderRef ref="TraceLog"/>
+        </Async>
+    </appenders>
+    <loggers>
+        <Logger name="com.hundsun.jres3_demo.consumer.common.log.trace" level="info" additivity="false">
+            <AppenderRef ref="AsyncTraceLog"/>
+        </Logger>
+    </loggers>
+<!--    <appenders>-->
+<!--        <RollingFile name="SyserrLog" fileName="logs/SyserrLog.log" filePattern="logs/SyserrLog-$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">-->
+<!--            <PatternLayout pattern="%msg%n" />-->
+<!--            <Policies>-->
+<!--                <TimeBasedTriggeringPolicy />-->
+<!--                <SizeBasedTriggeringPolicy size="250 MB" />-->
+<!--            </Policies>-->
+<!--        </RollingFile>-->
+<!--        <Async name="AsyncSyserrLog">-->
+<!--            <AppenderRef ref="SyserrLog" />-->
+<!--        </Async>-->
+<!--    </appenders>-->
+<!--    <loggers>-->
+<!--        <Logger name="com.hundsun.jrescloud.common.log.syserr" level="info" additivity="false">-->
+<!--            <AppenderRef ref="AsyncSyserrLog" />-->
+<!--        </Logger>-->
+<!--    </loggers>-->
+<!--    <appenders>-->
+<!--        <RollingFile name="BizerrLog" fileName="logs/BizerrLog.log" filePattern="logs/BizerrLog-$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">-->
+<!--            <PatternLayout pattern="%msg%n" />-->
+<!--            <Policies>-->
+<!--                <TimeBasedTriggeringPolicy />-->
+<!--                <SizeBasedTriggeringPolicy size="250 MB" />-->
+<!--            </Policies>-->
+<!--        </RollingFile>-->
+<!--        <Async name="AsyncBizerrLog">-->
+<!--            <AppenderRef ref="BizerrLog" />-->
+<!--        </Async>-->
+<!--    </appenders>-->
+<!--    <loggers>-->
+<!--        <Logger name="com.hundsun.jrescloud.common.log.bizerr" level="info" additivity="false">-->
+<!--            <AppenderRef ref="AsyncBizerrLog" />-->
+<!--        </Logger>-->
+<!--    </loggers>-->
+
+</Configuration>

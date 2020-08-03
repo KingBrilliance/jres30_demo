@@ -1,0 +1,20 @@
+app.name: consumer
+app.server:
+    port: 8888
+  registry:
+    address: 127.0.0.1:2181
+
+rpc:
+  registry:
+    group: dubbo
+
+  protocl:
+    name: dubbo
+    port: 28881
+
+logging:
+  level:
+    root: info
+  path: /Users/wangcan/log
+  file: /Users/wangcan/log/log.log
+
