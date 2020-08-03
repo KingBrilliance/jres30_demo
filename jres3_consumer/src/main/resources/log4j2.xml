@@ -10,6 +10,7 @@
             <AppenderRef ref="TraceLog"/>
         </Async>
     </appenders>
+
     <loggers>
         <Logger name="com.hundsun.jres3_demo.consumer.common.log.trace" level="info" additivity="false">
             <AppenderRef ref="AsyncTraceLog"/>
