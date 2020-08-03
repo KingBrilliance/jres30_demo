@@ -20,6 +20,7 @@ public class HelloController {
 
     @GetMapping("/sayHello")
     public Response<String> sayHello(String message){
+        int i=1/0;
         return Response.responseBySuccess("访问成功",iHelloService.sayHello(message));
     }
 
